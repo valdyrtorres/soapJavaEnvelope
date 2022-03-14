@@ -11,7 +11,7 @@ public class SoapConfig {
 	public Jaxb2Marshaller marshaller() {
 		
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-		marshaller.setPackagesToScan("com.tools.spring.soap.api.loaneligibility");
+		marshaller.setPackagesToScan("com.vivo.atma.api.types");
 		return marshaller;
 	}
 

@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vivo.atma.api.client.SoapClient;
-import com.vivo.atma.api.loaneligibility.Acknowledgement;
-import com.vivo.atma.api.loaneligibility.CustomerRequest;
+import com.vivo.atma.api.types.Acknowledgement;
+import com.vivo.atma.api.types.CustomerRequest;
+
 
 @SpringBootApplication
 @RestController
