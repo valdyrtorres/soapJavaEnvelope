@@ -2,11 +2,11 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
 // Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2022.03.14 às 07:38:44 PM BRT 
+// Gerado em: 2022.03.14 às 07:49:02 PM BRT 
 //
 
 
-package com.vivo.atma.api.types;
+package com.vivo.atma.api.sendsms;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +17,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de ServiceError complex type.
+ * <p>Classe Java de PolicyException complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="ServiceError"&gt;
+ * &lt;complexType name="PolicyException"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -38,12 +38,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ServiceError", namespace = "http://www.csapi.org/schema/parlayx/common/v2_1", propOrder = {
+@XmlType(name = "PolicyException", namespace = "http://www.csapi.org/schema/parlayx/common/v2_1", propOrder = {
     "messageId",
     "text",
     "variables"
 })
-public class ServiceError {
+public class PolicyException {
 
     @XmlElement(namespace = "", required = true)
     protected String messageId;

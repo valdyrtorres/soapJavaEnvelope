@@ -11,7 +11,7 @@ public class SoapConfig {
 	public Jaxb2Marshaller marshaller() {
 		
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-		marshaller.setPackagesToScan("com.vivo.atma.api.types");
+		marshaller.setPackagesToScan("com.vivo.atma.api.sendsms");
 		return marshaller;
 	}
 

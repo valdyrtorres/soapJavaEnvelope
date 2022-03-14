@@ -5,8 +5,8 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
-import com.vivo.atma.api.types.Acknowledgement;
-import com.vivo.atma.api.types.CustomerRequest;
+import com.vivo.atma.api.sendsms.Acknowledgement;
+import com.vivo.atma.api.sendsms.CustomerRequest;
 
 @Service
 public class SoapClient {

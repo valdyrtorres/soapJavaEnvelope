@@ -2,31 +2,30 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
 // Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2022.03.14 às 07:38:44 PM BRT 
+// Gerado em: 2022.03.14 às 07:49:02 PM BRT 
 //
 
 
-package com.vivo.atma.api.types;
+package com.vivo.atma.api.sendsms;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de DeliveryInformation complex type.
+ * <p>Classe Java de NameParameter complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="DeliveryInformation"&gt;
+ * &lt;complexType name="NameParameter"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="deliveryStatus" type="{http://www.csapi.org/schema/parlayx/sms/v2_2}DeliveryStatus"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,65 +35,63 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DeliveryInformation", namespace = "http://www.csapi.org/schema/parlayx/sms/v2_2", propOrder = {
-    "address",
-    "deliveryStatus"
+@XmlType(name = "NameParameter", namespace = "http://www.csapi.org/schema/parlayx/sms/v2_2", propOrder = {
+    "name",
+    "value"
 })
-public class DeliveryInformation {
+public class NameParameter {
 
     @XmlElement(namespace = "", required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected String address;
+    protected String name;
     @XmlElement(namespace = "", required = true)
-    @XmlSchemaType(name = "string")
-    protected DeliveryStatus deliveryStatus;
+    protected String value;
 
     /**
-     * Obtém o valor da propriedade address.
+     * Obtém o valor da propriedade name.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAddress() {
-        return address;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Define o valor da propriedade address.
+     * Define o valor da propriedade name.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAddress(String value) {
-        this.address = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
     /**
-     * Obtém o valor da propriedade deliveryStatus.
+     * Obtém o valor da propriedade value.
      * 
      * @return
      *     possible object is
-     *     {@link DeliveryStatus }
+     *     {@link String }
      *     
      */
-    public DeliveryStatus getDeliveryStatus() {
-        return deliveryStatus;
+    public String getValue() {
+        return value;
     }
 
     /**
-     * Define o valor da propriedade deliveryStatus.
+     * Define o valor da propriedade value.
      * 
      * @param value
      *     allowed object is
-     *     {@link DeliveryStatus }
+     *     {@link String }
      *     
      */
-    public void setDeliveryStatus(DeliveryStatus value) {
-        this.deliveryStatus = value;
+    public void setValue(String value) {
+        this.value = value;
     }
 
 }

@@ -2,11 +2,11 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
 // Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2022.03.14 às 07:38:44 PM BRT 
+// Gerado em: 2022.03.14 às 07:49:02 PM BRT 
 //
 
 
-package com.vivo.atma.api.types;
+package com.vivo.atma.api.sendsms;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;

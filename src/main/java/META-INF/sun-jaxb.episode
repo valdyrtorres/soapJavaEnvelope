@@ -1,185 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
-      
-    <!--
+  <!--
 
 Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
 Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-Gerado em: 2022.03.14 às 07:38:44 PM BRT 
+Gerado em: 2022.03.14 às 07:49:02 PM BRT 
 
   -->
-      
-    <bindings xmlns:tns="http://www.tools.com/spring/soap/api/loanEligibility" if-exists="true" scd="x-schema::tns">
-            
-        <schemaBindings map="false">
-                  
-            <package name="com.vivo.atma.api.types"/>
-                
-        </schemaBindings>
-            
-        <bindings if-exists="true" scd="tns:CustomerRequest">
-                  
-            <class ref="com.vivo.atma.api.types.CustomerRequest"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="tns:Acknowledgement">
-                  
-            <class ref="com.vivo.atma.api.types.Acknowledgement"/>
-                
-        </bindings>
-          
+  <bindings xmlns:tns="http://www.tools.com/spring/soap/api/loanEligibility" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.sendsms"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:CustomerRequest">
+      <class ref="com.vivo.atma.api.sendsms.CustomerRequest"/>
     </bindings>
-      
-    <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/common/v2_1" if-exists="true" scd="x-schema::tns">
-            
-        <schemaBindings map="false">
-                  
-            <package name="com.vivo.atma.api.types"/>
-                
-        </schemaBindings>
-            
-        <bindings if-exists="true" scd="~tns:ServiceException">
-                  
-            <class ref="com.vivo.atma.api.types.ServiceException"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:PolicyException">
-                  
-            <class ref="com.vivo.atma.api.types.PolicyException"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:TimeMetric">
-                  
-            <class ref="com.vivo.atma.api.types.TimeMetric"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:ChargingInformation">
-                  
-            <class ref="com.vivo.atma.api.types.ChargingInformation"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:SimpleReference">
-                  
-            <class ref="com.vivo.atma.api.types.SimpleReference"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:ServiceError">
-                  
-            <class ref="com.vivo.atma.api.types.ServiceError"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:TimeMetrics">
-                  
-            <typesafeEnumClass ref="com.vivo.atma.api.types.TimeMetrics"/>
-                
-        </bindings>
-          
+    <bindings if-exists="true" scd="tns:Acknowledgement">
+      <class ref="com.vivo.atma.api.sendsms.Acknowledgement"/>
     </bindings>
-      
-    <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/sms/send/v2_2/local" if-exists="true" scd="x-schema::tns">
-            
-        <schemaBindings map="false">
-                  
-            <package name="com.vivo.atma.api.types"/>
-                
-        </schemaBindings>
-            
-        <bindings if-exists="true" scd="~tns:sendSms">
-                  
-            <class ref="com.vivo.atma.api.types.SendSms"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:sendSmsResponse">
-                  
-            <class ref="com.vivo.atma.api.types.SendSmsResponse"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:sendSmsLogo">
-                  
-            <class ref="com.vivo.atma.api.types.SendSmsLogo"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:sendSmsLogoResponse">
-                  
-            <class ref="com.vivo.atma.api.types.SendSmsLogoResponse"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:sendSmsRingtone">
-                  
-            <class ref="com.vivo.atma.api.types.SendSmsRingtone"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:sendSmsRingtoneResponse">
-                  
-            <class ref="com.vivo.atma.api.types.SendSmsRingtoneResponse"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:getSmsDeliveryStatus">
-                  
-            <class ref="com.vivo.atma.api.types.GetSmsDeliveryStatus"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:getSmsDeliveryStatusResponse">
-                  
-            <class ref="com.vivo.atma.api.types.GetSmsDeliveryStatusResponse"/>
-                
-        </bindings>
-          
+  </bindings>
+  <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/common/v2_1" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.sendsms"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:ServiceException">
+      <class ref="com.vivo.atma.api.sendsms.ServiceException"/>
     </bindings>
-      
-    <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/sms/v2_2" if-exists="true" scd="x-schema::tns">
-            
-        <schemaBindings map="false">
-                  
-            <package name="com.vivo.atma.api.types"/>
-                
-        </schemaBindings>
-            
-        <bindings if-exists="true" scd="~tns:DeliveryInformation">
-                  
-            <class ref="com.vivo.atma.api.types.DeliveryInformation"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:SmsMessage">
-                  
-            <class ref="com.vivo.atma.api.types.SmsMessage"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:NameParameter">
-                  
-            <class ref="com.vivo.atma.api.types.NameParameter"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:DeliveryStatus">
-                  
-            <typesafeEnumClass ref="com.vivo.atma.api.types.DeliveryStatus"/>
-                
-        </bindings>
-            
-        <bindings if-exists="true" scd="~tns:SmsFormat">
-                  
-            <typesafeEnumClass ref="com.vivo.atma.api.types.SmsFormat"/>
-                
-        </bindings>
-          
+    <bindings if-exists="true" scd="~tns:PolicyException">
+      <class ref="com.vivo.atma.api.sendsms.PolicyException"/>
     </bindings>
-    
+    <bindings if-exists="true" scd="~tns:TimeMetric">
+      <class ref="com.vivo.atma.api.sendsms.TimeMetric"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ChargingInformation">
+      <class ref="com.vivo.atma.api.sendsms.ChargingInformation"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SimpleReference">
+      <class ref="com.vivo.atma.api.sendsms.SimpleReference"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ServiceError">
+      <class ref="com.vivo.atma.api.sendsms.ServiceError"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:TimeMetrics">
+      <typesafeEnumClass ref="com.vivo.atma.api.sendsms.TimeMetrics"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/sms/send/v2_2/local" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.sendsms"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:sendSms">
+      <class ref="com.vivo.atma.api.sendsms.SendSms"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsResponse">
+      <class ref="com.vivo.atma.api.sendsms.SendSmsResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsLogo">
+      <class ref="com.vivo.atma.api.sendsms.SendSmsLogo"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsLogoResponse">
+      <class ref="com.vivo.atma.api.sendsms.SendSmsLogoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsRingtone">
+      <class ref="com.vivo.atma.api.sendsms.SendSmsRingtone"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsRingtoneResponse">
+      <class ref="com.vivo.atma.api.sendsms.SendSmsRingtoneResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getSmsDeliveryStatus">
+      <class ref="com.vivo.atma.api.sendsms.GetSmsDeliveryStatus"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getSmsDeliveryStatusResponse">
+      <class ref="com.vivo.atma.api.sendsms.GetSmsDeliveryStatusResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/sms/v2_2" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.sendsms"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DeliveryInformation">
+      <class ref="com.vivo.atma.api.sendsms.DeliveryInformation"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SmsMessage">
+      <class ref="com.vivo.atma.api.sendsms.SmsMessage"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:NameParameter">
+      <class ref="com.vivo.atma.api.sendsms.NameParameter"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DeliveryStatus">
+      <typesafeEnumClass ref="com.vivo.atma.api.sendsms.DeliveryStatus"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SmsFormat">
+      <typesafeEnumClass ref="com.vivo.atma.api.sendsms.SmsFormat"/>
+    </bindings>
+  </bindings>
 </bindings>
