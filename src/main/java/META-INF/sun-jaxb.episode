@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
+Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
+Gerado em: 2022.03.14 às 07:06:38 PM BRT 
+
+  -->
+  <bindings xmlns:tns="http://www.tools.com/spring/soap/api/loanEligibility" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.loaneligibility"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:CustomerRequest">
+      <class ref="com.vivo.atma.api.loaneligibility.CustomerRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:Acknowledgement">
+      <class ref="com.vivo.atma.api.loaneligibility.Acknowledgement"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/common/v2_1" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.loaneligibility"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:ServiceException">
+      <class ref="com.vivo.atma.api.loaneligibility.ServiceException"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:PolicyException">
+      <class ref="com.vivo.atma.api.loaneligibility.PolicyException"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:TimeMetric">
+      <class ref="com.vivo.atma.api.loaneligibility.TimeMetric"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ChargingInformation">
+      <class ref="com.vivo.atma.api.loaneligibility.ChargingInformation"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SimpleReference">
+      <class ref="com.vivo.atma.api.loaneligibility.SimpleReference"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ServiceError">
+      <class ref="com.vivo.atma.api.loaneligibility.ServiceError"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:TimeMetrics">
+      <typesafeEnumClass ref="com.vivo.atma.api.loaneligibility.TimeMetrics"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/sms/send/v2_2/local" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.loaneligibility"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:sendSms">
+      <class ref="com.vivo.atma.api.loaneligibility.SendSms"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsResponse">
+      <class ref="com.vivo.atma.api.loaneligibility.SendSmsResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsLogo">
+      <class ref="com.vivo.atma.api.loaneligibility.SendSmsLogo"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsLogoResponse">
+      <class ref="com.vivo.atma.api.loaneligibility.SendSmsLogoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsRingtone">
+      <class ref="com.vivo.atma.api.loaneligibility.SendSmsRingtone"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sendSmsRingtoneResponse">
+      <class ref="com.vivo.atma.api.loaneligibility.SendSmsRingtoneResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getSmsDeliveryStatus">
+      <class ref="com.vivo.atma.api.loaneligibility.GetSmsDeliveryStatus"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getSmsDeliveryStatusResponse">
+      <class ref="com.vivo.atma.api.loaneligibility.GetSmsDeliveryStatusResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.csapi.org/schema/parlayx/sms/v2_2" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.vivo.atma.api.loaneligibility"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:DeliveryInformation">
+      <class ref="com.vivo.atma.api.loaneligibility.DeliveryInformation"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SmsMessage">
+      <class ref="com.vivo.atma.api.loaneligibility.SmsMessage"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:NameParameter">
+      <class ref="com.vivo.atma.api.loaneligibility.NameParameter"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DeliveryStatus">
+      <typesafeEnumClass ref="com.vivo.atma.api.loaneligibility.DeliveryStatus"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:SmsFormat">
+      <typesafeEnumClass ref="com.vivo.atma.api.loaneligibility.SmsFormat"/>
+    </bindings>
+  </bindings>
+</bindings>
