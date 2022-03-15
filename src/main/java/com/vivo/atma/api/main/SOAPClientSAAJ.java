@@ -1,77 +1,92 @@
-package com.vivo.atma.api.client;
+package com.vivo.atma.api.main;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.SOAPBody;
-import javax.xml.soap.SOAPConnection;
-import javax.xml.soap.SOAPConnectionFactory;
-import javax.xml.soap.SOAPConstants;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPEnvelope;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPHeader;
-import javax.xml.soap.SOAPMessage;
-import javax.xml.soap.SOAPPart;
+import javax.xml.soap.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import org.springframework.stereotype.Service;
-import org.springframework.ws.client.core.WebServiceTemplate;
+public class SOAPClientSAAJ {
 
-import com.vivo.atma.api.DTO.SmsDTO;
-import com.vivo.atma.api.sendsms.Acknowledgement;
-import com.vivo.atma.api.sendsms.CustomerRequest;
+    public static void main(String args[]) {
 
-@Service
-public class SoapClient {
-	
-	@Autowired
-	private Jaxb2Marshaller marshaller;
-	
-	private WebServiceTemplate template;
-	
-	public Acknowledgement getLoanStatus(CustomerRequest request) {
-		template = new WebServiceTemplate(marshaller);
-		Acknowledgement acknowledgement = (Acknowledgement) template.marshalSendAndReceive("http://localhost:8080/ws", request);
-		
-		return acknowledgement;
-	}
-	
-	public String sendSms(SmsDTO request) {
-		String soapEndpointUrl = "https://prm-hml.vivo.com.br/osg/services/SendSmsService";
-		return callSoapSendSmsWebService(soapEndpointUrl);
-	}
-	
-	private String callSoapSendSmsWebService(String soapEndpointUrl) {
-		
-		ByteArrayOutputStream outSoapResponse = new ByteArrayOutputStream();
-    	
+        String soapEndpointUrl = "https://prm-hml.vivo.com.br/osg/services/SendSmsService";
+        String soapAction = "http://www.webserviceX.NET/GetInfoByCity";
+        String soapXsd = "http://www.w3.org/2001/XMLSchema";
+        String soapXsi = "http://www.w3.org/2001/XMLSchema-instance";
+
+        callSoapWebService(soapEndpointUrl, soapAction);
+    }
+    
+    private static void callSoapWebService(String soapEndpointUrl, String soapAction) {
         try {
-        	
             // Create SOAP Connection
             SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
             SOAPConnection soapConnection = soapConnectionFactory.createConnection();
 
             // Send SOAP Message to SOAP Server
-            SOAPMessage soapResponse = soapConnection.call(EnvelopeSendSms(), soapEndpointUrl);
+            //SOAPMessage soapResponse = soapConnection.call(createSOAPRequest(soapAction), soapEndpointUrl);
+            SOAPMessage soapResponse = soapConnection.call(EnvelopeCompleto(), soapEndpointUrl);
 
             // Print the SOAP Response
             System.out.println("Response SOAP Message:");
-            
-            soapResponse.writeTo(outSoapResponse);      ;  
-            soapConnection.close();                   
-            
+            soapResponse.writeTo(System.out);
+            System.out.println();
+
+            soapConnection.close();
         } catch (Exception e) {
             System.err.println("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
             e.printStackTrace();
         }
-        
-        return new String(outSoapResponse.toByteArray());
     }
-	
-    private SOAPMessage EnvelopeSendSms() throws SOAPException, IOException {
+    
+    private static SOAPMessage createSOAPRequest(String soapAction) throws Exception {
+        MessageFactory messageFactory = MessageFactory.newInstance();
+        SOAPMessage soapMessage = messageFactory.createMessage();
+
+        createSoapEnvelope(soapMessage);
+
+        MimeHeaders headers = soapMessage.getMimeHeaders();
+        headers.addHeader("SOAPAction", soapAction);
+
+        soapMessage.saveChanges();
+
+        /* Print the request message, just for debugging purposes */
+        System.out.println("Request SOAP Message:");
+        soapMessage.writeTo(System.out);
+        System.out.println("\n");
+
+        return soapMessage;
+    }
+
+    private static void createSoapEnvelope(SOAPMessage soapMessage) throws SOAPException {
+        SOAPPart soapPart = soapMessage.getSOAPPart();
+
+        String myNamespace = "ns3";
+        String myNamespaceURI = "http://www.webserviceX.NET";
+
+        // SOAP Envelope
+        SOAPEnvelope envelope = soapPart.getEnvelope();
+        envelope.addNamespaceDeclaration(myNamespace, myNamespaceURI);
+
+            /*
+            Constructed SOAP Request Message:
+            <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:myNamespace="http://www.webserviceX.NET">
+                <SOAP-ENV:Header/>
+                <SOAP-ENV:Body>
+                    <myNamespace:GetInfoByCity>
+                        <myNamespace:USCity>New York</myNamespace:USCity>
+                    </myNamespace:GetInfoByCity>
+                </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>
+            */
+
+        // SOAP Body
+        SOAPBody soapBody = envelope.getBody();
+        SOAPElement soapBodyElem = soapBody.addChildElement("sendSms", myNamespace);
+        SOAPElement soapBodyElem1 = soapBodyElem.addChildElement("USCity", myNamespace);
+        soapBodyElem1.addTextNode("New York");
+    }
+    
+    private static SOAPMessage EnvelopeCompleto() throws SOAPException, IOException {
 		 MessageFactory messageFactory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL); 
 		 SOAPMessage soapMessage = messageFactory.createMessage(); 
 		 SOAPPart soapPart = soapMessage.getSOAPPart(); 
@@ -133,6 +148,5 @@ public class SoapClient {
 		 
 		 return soapMessage;
 	}
-
 
 }

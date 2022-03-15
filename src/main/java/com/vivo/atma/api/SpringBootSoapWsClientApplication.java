@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vivo.atma.api.DTO.SmsDTO;
 import com.vivo.atma.api.client.SoapClient;
 import com.vivo.atma.api.sendsms.Acknowledgement;
 import com.vivo.atma.api.sendsms.CustomerRequest;
+import com.vivo.atma.api.sendsms.SendSms;
+import com.vivo.atma.api.sendsms.SendSmsResponse;
 
 
 @SpringBootApplication
@@ -22,6 +25,11 @@ public class SpringBootSoapWsClientApplication {
 	@PostMapping("getLoanStatus")
 	public Acknowledgement invokeSoapClientToGetLoanStatus(@RequestBody CustomerRequest request) {
 		return cliente.getLoanStatus(request);
+	}
+	
+	@PostMapping("sendSms")
+	public String invokeSoapClientToSendSms(@RequestBody SmsDTO request) {
+		return cliente.sendSms(request);
 	}
 
 	public static void main(String[] args) {
